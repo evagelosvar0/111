@@ -99,7 +99,7 @@ alert(dataJson)
 }
 </script>
 </head>
-<body contenteditable="false">
+<body>
 
 
 
