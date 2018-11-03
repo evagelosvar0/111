@@ -37,7 +37,7 @@ function UpdateFile(){
     url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
     type: 'PUT',
         beforeSend: function(xhr) { 
-            xhr.setRequestHeader("Authorization", "token  e3dcc378eecee394513a997e2dd3e1b7528cf8ce"); 
+            xhr.setRequestHeader("Authorization", "token  65781c73e56d5c706a43a8651f28cffa6a41f6a2"); 
         },
         data: dataJson
         }).done(function(response) {
