@@ -3,8 +3,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 var dataJson = "";
+var token = "";
 
 
+init()
+
+
+
+
+function init(){
 var username = "evagelosvar0";
 	    var password = "marina12gmail";
 	    var name = "name";
@@ -34,7 +41,7 @@ alert('{"scopes":["repo"],"note":"Create Repo with Ajaxww' + x + '"'  + '}')
 		    console.log(err);
 		}); 
 
-
+}
 
  function GotFile(){
 
