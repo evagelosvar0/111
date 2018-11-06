@@ -6,12 +6,12 @@ var dataJson = "";
 var token = "";
 
 
-//init()
+ 
 
 
 
 
-function init(){
+function save(){
 var username = "evagelosvar0";
 	    var password = "marina12gmail";
 	    var name = "name";
@@ -107,7 +107,8 @@ alert(dataJson)
 </script>
 </head>
 <body>
-<button onclick="init()">Click me</button>
+<button onclick="edit()">edit</button>
+<button onclick="save()">save</button>
 
 
 
