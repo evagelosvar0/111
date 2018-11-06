@@ -6,7 +6,7 @@ var dataJson = "";
 var token = "";
 
 
-init()
+//init()
 
 
 
@@ -107,7 +107,7 @@ alert(dataJson)
 </script>
 </head>
 <body>
-
+<button onclick="init()">Click me</button>
 
 
 
