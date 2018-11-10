@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html><head>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 var dataJson = "";
@@ -106,12 +106,12 @@ alert(dataJson)
     });
 }
 </script>
-</head>
-<body>
+
+
 
 <button onclick="edit()">edit</button>
 <button onclick="save()">save</button>
 <div id="demo" contenteditable="true">Click the button ffffffffffffffffffffto change the text in this paragraph.</div>
 
 
-</body></html>w
+w
