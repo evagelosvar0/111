@@ -73,6 +73,7 @@ type: 'GET'
    
     dataJson = JSON.stringify(commit);
      alert(dataJson)
+							document.getElementById("demo").innerHTML = response.content;
      UpdateFile();
     //t()
 });
@@ -107,9 +108,10 @@ alert(dataJson)
 </script>
 </head>
 <body>
+
 <button onclick="edit()">edit</button>
 <button onclick="save()">save</button>
+<div id="demo">Click the button to change the text in this paragraph.</div>
 
 
-
-<div class="pcl_tooltip_box" style="display: none;">Image already added<div class="arrow border"></div><div class="arrow"></div></div><div class="pcl_global_mask" style="display: none;"></div></body><div id="scroll_div" style="width: 100px; height: 100px; overflow: scroll; position: absolute; top: -9999px;"></div></html>w
+</body></html>w
