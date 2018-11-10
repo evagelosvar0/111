@@ -73,7 +73,7 @@ type: 'GET'
    
     dataJson = JSON.stringify(commit);
      alert(dataJson)
-							document.getElementById("demo").innerHTML = response.content;
+					document.getElementById("demo").innerHTML = atob(response.content);
      UpdateFile();
     //t()
 });
