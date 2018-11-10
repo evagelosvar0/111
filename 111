@@ -4,11 +4,11 @@
  <div contenteditable="true" style="position:absolute;top:93px;left:65px;width:304px;height:13px;"><svg width="304" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="304" lengthAdjust="spacingAndGlyphs">edede22222222</text></svg></div>
  
  <div style="position:absolute;top:114px;left:91px;width:165px;height:13px;">
- <svg width="165" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="165" lengthAdjust="spacingAndGlyphs"><foreignObject class="node" x="46" y="22" width="200" height="300">
+ <svg width="165" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><foreignObject class="node" x="46" y="22" width="200" height="300"><text font-family="Verdana" y="90%" textLength="165" lengthAdjust="spacingAndGlyphs">
  
 <div contenteditable="true"><b>The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs</b></div>
  
-</foreignObject></text></svg>  </div>
+</text></foreignObject></svg>  </div>
  
  
  
