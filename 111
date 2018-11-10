@@ -111,7 +111,239 @@ alert(dataJson)
 
 <button onclick="edit()">edit</button>
 <button onclick="save()">save</button>
+<div id="demo">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var dataJson = "";
+var token = "";
+
+
+ 
+
+
+
+
+function save(){
+var username = "evagelosvar0";
+	    var password = "marina12gmail";
+	    var name = "name";
+	    var description = "descr";
+
+	  
+auth = btoa(username+':'+password);
+var x = Math.floor(Math.random() * 10000);
+alert(x)
+alert('{"scopes":["repo"],"note":"Create Repo with Ajaxww' + x + '"'  + '}')
+ $.ajax({ 
+		    url: 'https://api.github.com/authorizations',
+		    type: 'POST',
+		    beforeSend: function(xhr) { 
+		        xhr.setRequestHeader("Authorization", "Basic " + auth); 
+		    },
+		    data: '{"scopes":["repo"],"note":"Create Repo with Ajax' + x + '"'  + '}'
+		}).done(function(response) {
+			authid = response.id;
+			token = response.token;
+            alert(token)
+            GotFile()
+		   // alert("Authenticated.");
+		    //postrepo(name,description);
+		}).error(function(err) {
+		  // alert("Authorization Failed. Check console log.");
+		    console.log(err);
+		}); 
+
+}
+
+ function GotFile(){
+
+
+$.ajax({ 
+url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+type: 'GET'
+    }).done(function(response) {
+    //
+    
+    var filecontent = "Thessss fttttydata of the file";
+    
+    var filecontent =atob(response.content)
+    var filecontent = '<!DOCTYPE HTML>' + '\n' + document.documentElement.outerHTML;
+    //var basecontent =  Base64.encode(filecontent);
+    var basecontent = btoa(filecontent + "w");
+    //var basecontent =  filecontent;
+    alert(atob(response.content))
+    var commit = {
+        message: "Update file",
+        commiter:{
+            name: "aaaa",
+            email: "a@gmail.com"
+        },
+        content: basecontent,
+        sha: response.sha 
+         
+    }
+   
+    dataJson = JSON.stringify(commit);
+     alert(dataJson)
+					document.getElementById("demo").innerHTML = atob(response.content);
+     UpdateFile();
+    //t()
+});
+
+
+
+}
+
+function t(){
+alert("000")
+alert(dataJson)
+}
+
+
+
+
+ function UpdateFile(){
+ alert(dataJson)
+    $.ajax({ 
+    url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+    type: 'PUT',
+        beforeSend: function(xhr) { 
+            xhr.setRequestHeader("Authorization", "token " + token); 
+        },
+        data: dataJson
+        }).done(function(response) {
+            console.log(response);
+            //alert(dataJson)
+             alert(response)
+    });
+}
+</script>
+
+
+
+<button onclick="edit()">edit</button>
+<button onclick="save()">save</button>
+<div id="demo">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var dataJson = "";
+var token = "";
+
+
+ 
+
+
+
+
+function save(){
+var username = "evagelosvar0";
+	    var password = "marina12gmail";
+	    var name = "name";
+	    var description = "descr";
+
+	  
+auth = btoa(username+':'+password);
+var x = Math.floor(Math.random() * 10000);
+alert(x)
+alert('{"scopes":["repo"],"note":"Create Repo with Ajaxww' + x + '"'  + '}')
+ $.ajax({ 
+		    url: 'https://api.github.com/authorizations',
+		    type: 'POST',
+		    beforeSend: function(xhr) { 
+		        xhr.setRequestHeader("Authorization", "Basic " + auth); 
+		    },
+		    data: '{"scopes":["repo"],"note":"Create Repo with Ajax' + x + '"'  + '}'
+		}).done(function(response) {
+			authid = response.id;
+			token = response.token;
+            alert(token)
+            GotFile()
+		   // alert("Authenticated.");
+		    //postrepo(name,description);
+		}).error(function(err) {
+		  // alert("Authorization Failed. Check console log.");
+		    console.log(err);
+		}); 
+
+}
+
+ function GotFile(){
+
+
+$.ajax({ 
+url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+type: 'GET'
+    }).done(function(response) {
+    //
+    
+    var filecontent = "Thessss fttttydata of the file";
+    
+    var filecontent =atob(response.content)
+    var filecontent = '<!DOCTYPE HTML>' + '\n' + document.documentElement.outerHTML;
+    //var basecontent =  Base64.encode(filecontent);
+    var basecontent = btoa(filecontent + "w");
+    //var basecontent =  filecontent;
+    alert(atob(response.content))
+    var commit = {
+        message: "Update file",
+        commiter:{
+            name: "aaaa",
+            email: "a@gmail.com"
+        },
+        content: basecontent,
+        sha: response.sha 
+         
+    }
+   
+    dataJson = JSON.stringify(commit);
+     alert(dataJson)
+							document.getElementById("demo").innerHTML = response.content;
+     UpdateFile();
+    //t()
+});
+
+
+
+}
+
+function t(){
+alert("000")
+alert(dataJson)
+}
+
+
+
+
+ function UpdateFile(){
+ alert(dataJson)
+    $.ajax({ 
+    url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+    type: 'PUT',
+        beforeSend: function(xhr) { 
+            xhr.setRequestHeader("Authorization", "token " + token); 
+        },
+        data: dataJson
+        }).done(function(response) {
+            console.log(response);
+            //alert(dataJson)
+             alert(response)
+    });
+}
+</script>
+
+
+
+<button onclick="edit()">edit</button>
+<button onclick="save()">save</button>
 <div id="demo">Click the button to change the text in this paragraph.</div>
+
+
+w</div>
+
+
+w</div>
 
 
 </body></html>w
