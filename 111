@@ -1,22 +1,107 @@
-<div contenteditable="true" style="position:absolute;top:62px;left:63px;width:15px;height:13px;"><svg width="15" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="15" lengthAdjust="spacingAndGlyphs"></text></svg></div>
-<div contenteditable="true" style="position:absolute;top:61px;left:137px;width:59px;height:14px;"><svg width="59" height="14" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="59" lengthAdjust="spacingAndGlyphs">ff4</text></svg></div>
- <div contenteditable="true" style="position:absolute;top:64px;left:233px;width:395px;height:13px;"><svg width="395" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="395" lengthAdjust="spacingAndGlyphs">ff32e32e32e32e32e32eggggg&nbsp; 21</text></svg></div>
- <div contenteditable="true" style="position:absolute;top:93px;left:65px;width:304px;height:13px;"><svg width="304" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><text font-family="Verdana" y="90%" textLength="304" lengthAdjust="spacingAndGlyphs">edede222222 22</text></svg></div>
- 
- <div style="position:absolute;top:114px;left:91px;width:165px;height:13px;">
- <svg width="165" height="13" style="border:solid 1px gray" xmlns="http://www.w3.org/2000/svg"><foreignObject class="node" x="46" y="22" width="200" height="300"><text font-family="Verdana" y="90%" textlength="165" lengthadjust="spacingAndGlyphs">
- 
-<div contenteditable="true"><b>The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs</b></div>
- 
-</text></foreignObject></svg>  </div>
- 
- 
- 
- 
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
-<text><foreignObject class="node" x="46" y="22" width="200" height="300">
- 
-<div><b>The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs</b></div>
- 
-</foreignObject></text>
-</svg>
+<!DOCTYPE HTML>
+<html><head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var dataJson = "";
+
+
+var username = "evagelosvar0";
+	    var password = "marina12gmail";
+	    var name = "name";
+	    var description = "descr";
+
+	  
+auth = btoa(username+':'+password);
+var x = Math.floor(Math.random() * 10000);
+alert(x)
+alert('{"scopes":["repo"],"note":"Create Repo with Ajaxww' + x + '"'  + '}')
+ $.ajax({ 
+		    url: 'https://api.github.com/authorizations',
+		    type: 'POST',
+		    beforeSend: function(xhr) { 
+		        xhr.setRequestHeader("Authorization", "Basic " + auth); 
+		    },
+		    data: '{"scopes":["repo"],"note":"Create Repo with Ajax' + x + '"'  + '}'
+		}).done(function(response) {
+			authid = response.id;
+			token = response.token;
+            alert(token)
+            GotFile()
+		   // alert("Authenticated.");
+		    //postrepo(name,description);
+		}).error(function(err) {
+		  // alert("Authorization Failed. Check console log.");
+		    console.log(err);
+		}); 
+
+
+
+ function GotFile(){
+
+
+$.ajax({ 
+url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+type: 'GET'
+    }).done(function(response) {
+    //
+    
+    var filecontent = "Thessss fttttydata of the file";
+    
+    var filecontent =atob(response.content)
+    var filecontent = '<!DOCTYPE HTML>' + '\n' + document.documentElement.outerHTML;
+    //var basecontent =  Base64.encode(filecontent);
+    var basecontent = btoa(filecontent + "w");
+    //var basecontent =  filecontent;
+    alert(atob(response.content))
+    var commit = {
+        message: "Update file",
+        commiter:{
+            name: "aaaa",
+            email: "a@gmail.com"
+        },
+        content: basecontent,
+        sha: response.sha 
+         
+    }
+   
+    dataJson = JSON.stringify(commit);
+     alert(dataJson)
+     UpdateFile();
+    //t()
+});
+
+
+
+}
+
+function t(){
+alert("000")
+alert(dataJson)
+}
+
+
+
+
+ function UpdateFile(){
+ alert(dataJson)
+    $.ajax({ 
+    url: 'https://api.github.com/repos/evagelosvar0/111/contents/111',
+    type: 'PUT',
+        beforeSend: function(xhr) { 
+            xhr.setRequestHeader("Authorization", "token " + token); 
+        },
+        data: dataJson
+        }).done(function(response) {
+            console.log(response);
+            //alert(dataJson)
+             alert(response)
+    });
+}
+</script>
+</head>
+<body>
+
+
+
+
+</body></html>w
